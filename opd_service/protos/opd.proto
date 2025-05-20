@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package opd;
+
+service OpdService {
+  rpc BookAppointment (AppointmentRequest) returns (AppointmentResponse);
+  rpc CancelAppointment (CancelRequest) returns (CancelResponse);
+}
+
+message AppointmentRequest {
+  string patient_id = 1;
+  string doctor_id = 2;
+  string time = 3;
+}
+
+message AppointmentResponse {
+  string appointment_id = 1;
+  string status = 2;
+}
+
+message CancelRequest {
+  string appointment_id = 1;
+}
+
+message CancelResponse {
+  string status = 1;
+}
