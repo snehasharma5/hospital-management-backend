@@ -24,11 +24,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuser.proto')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nuser.proto\x12\x04user\"L\n\x11\x43reateUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x17\n\x0fhashed_password\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\"6\n\x12\x43reateUserResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"\"\n\x0eGetUserRequest\x12\x10\n\x08username\x18\x01 \x01(\t\"Y\n\x0fGetUserResponse\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x17\n\x0fhashed_password\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\x12\r\n\x05\x66ound\x18\x04 \x01(\x08\x32\x90\x01\n\x0bUserService\x12?\n\nCreateUser\x12\x17.user.CreateUserRequest\x1a\x18.user.CreateUserResponse\x12@\n\x11GetUserByUsername\x12\x14.user.GetUserRequest\x1a\x15.user.GetUserResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
+  _globals['_CREATEUSERREQUEST']._serialized_start=20
+  _globals['_CREATEUSERREQUEST']._serialized_end=96
+  _globals['_CREATEUSERRESPONSE']._serialized_start=98
+  _globals['_CREATEUSERRESPONSE']._serialized_end=152
+  _globals['_GETUSERREQUEST']._serialized_start=154
+  _globals['_GETUSERREQUEST']._serialized_end=188
+  _globals['_GETUSERRESPONSE']._serialized_start=190
+  _globals['_GETUSERRESPONSE']._serialized_end=279
+  _globals['_USERSERVICE']._serialized_start=282
+  _globals['_USERSERVICE']._serialized_end=426
 # @@protoc_insertion_point(module_scope)
