@@ -3,3 +3,5 @@ grpcio-tools
 sqlalchemy 
 psycopg2-binary
 protobuf
+pyjwt
+passlib[bcrypt]

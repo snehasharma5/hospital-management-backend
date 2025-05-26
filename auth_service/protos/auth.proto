@@ -2,20 +2,15 @@ syntax = "proto3";
 
 package auth;
 
-service AuthService {
-  rpc Register(RegisterRequest) returns (RegisterResponse);
-  rpc Login(LoginRequest) returns (LoginResponse);
-}
-
 message RegisterRequest {
   string username = 1;
   string password = 2;
-  string role = 3; // e.g. patient, doctor, admin
+  string role = 3;
 }
 
-message RegisterResponse {
-  bool success = 1;
-  string message = 2;
+message UserResponse {
+  string username = 1;
+  string role = 2;
 }
 
 message LoginRequest {
@@ -24,7 +19,11 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  bool success = 1;
-  string token = 2; // JWT token
-  string message = 3;
+  string token = 1;
+  string role = 2;
+}
+
+service AuthService {
+  rpc Register(RegisterRequest) returns (UserResponse);
+  rpc Login(LoginRequest) returns (LoginResponse);
 }
